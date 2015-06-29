@@ -1,0 +1,7 @@
+<article class= "basic-entry">
+	<h1><%= @idea.title %></h1>
+	<h2><%= @idea.short_description %></h2>
+	<p><%= @idea.idea_body %></p>
+</article>
+<a href = "/edit?id=<%= @idea.id %>" class = "button">Edit</a>
+<a href = "/delete?id=<%= @idea.id %>" class = "button">Delete</a>

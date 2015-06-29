@@ -1,0 +1,23 @@
+
+<h2 class = "page-title">Here is a list of all ideas, created by our users:</h2>
+<form action="/delete" method = "POST">
+	<table class = "ideas_list">
+		<tr class="table_row">
+			<th>Title:</th>
+			<th>Short Description</th>
+			<th>Edit:</th>
+			<th>Delete:</th>
+		</tr>
+
+		<% @ideas.each do |idea| %>
+			<tr class="table_row <%= idea.id %>">
+				<td class="table_cell title"><a href = "/full/<%= idea.id %>" ><%= idea.title %></a></td>
+				<td class="table_cell short_description"> <%= idea.short_description %></td>
+				<td><a href = "edit?id=<%= idea.id %>">Edit</a></td>
+				<td><input type= "checkbox" value ="<%= idea.id %>" name = "delete-<%= idea.id %>"></td>
+			</tr>
+		<% end %>
+	</table>
+	<input type="submit" value = "Delete >>" class="button">
+</form>
+

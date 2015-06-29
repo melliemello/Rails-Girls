@@ -1,0 +1,47 @@
+
+<!DOCTYPE  html>
+
+<html>
+	<head>
+		<title><%= @name %></title>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+	</head>
+	<body>
+
+		<nav>
+			<ul>
+				<li><a href = "/">Идеи:</a></li>
+				<li><a href = "/new">Добави идея:</a></li>   
+			</ul>
+		</nav>
+		<h1>Всички идеи:</h1>
+
+		<form action = "/delete" method = "POST" >
+			<table class = "ideas_list">
+				<tr>
+					<th>ID:</th>
+					<th>Кратко описание:</th>
+					<th>Идея:</th>
+					<th><input type = "submit" value = "Изтрий"></th>
+				</tr>
+				<% if @ideas != nil then @ideas.each do |entry_id, entry_content|    %>				
+				<tr>
+					<% unless entry_content.empty? %>
+					<td style = "border:1px solid grey"><%= entry_id  %></td>
+					<% entry_content.each do |key, val| %>
+					<td><%= val %></td>
+					<% end %>
+					<td><input type = "checkbox"   name = <%= "delete-status-#{entry_id} "%> value = <%= entry_id %> > </td> 
+					<td><a href= <%= "/edit?id=#{entry_id}" %>> Редакция</a></td>
+					<% end %>
+				<%end%>
+
+				</tr>
+		
+			</table>
+			
+		</form>
+
+	</body>
+</html>

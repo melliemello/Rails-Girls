@@ -1,0 +1,19 @@
+<!DOCTYPE  html>
+<html>
+	<head>
+		<title><%= @name %></title>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+	</head>
+	<body>
+	<form  action = "/edit" method = "POST" >
+		<p><%= @id %></p>
+			<input type = "hidden" value = <%= @id %>  name ="id">
+			<label for="idea_description">Кратко описание:</label>
+			<input type="text" id = "idea_description" name="idea_description"  placeholder = <%= @idea.description %>>
+			<label for="idea_body">Идея:</label>
+			<textarea id = "idea_body" name="idea_body"  ><%= @idea.body %></textarea>
+			<input type= "submit">
+		</form>
+	</body>
+</html>

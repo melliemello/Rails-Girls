@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    erubis (2.7.0)
+    rack (1.5.2)
+
+PLATFORMS
+  x86-mingw32
+
+DEPENDENCIES
+  erubis
+  rack
